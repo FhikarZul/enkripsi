@@ -89,14 +89,14 @@
 	                    <!-- Leave for security protection, read docs for details -->
 	                    <div>
 	                        <div>
-	                            <h2 class="section_title">Tambah File</h2>
+	                            <h2 class="section_title">Enkripsi File</h2>
 								
 								<?php 
 									if(isset($_GET['m'])){
 										if($_GET['m'] == "berhasil"){
 											echo '<b style="color:red;"><p>Enkripsi Berhasil!</p></b>';
 										}else if($_GET['m'] == "gagal"){
-											echo "<b><p>Enkripsi Gagal!</p></b>";
+											echo "<b><p>Key sudah digunakan!</p></b>";
 										}
 									}
 								?>

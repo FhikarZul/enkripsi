@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Feb 2022 pada 07.30
+-- Waktu pembuatan: 22 Mar 2022 pada 12.30
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.10
 
@@ -36,6 +36,16 @@ CREATE TABLE `tb_files` (
   `status` int(11) DEFAULT NULL,
   `kunci` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_files`
+--
+
+INSERT INTO `tb_files` (`id_file`, `file`, `size`, `tipe_file`, `waktu_enkripsi`, `status`, `kunci`) VALUES
+(70, '838956_yuhuuuuuu.docx', '11.24', 'docx', '13.137718041738', 0, 'r4u7x!A%D*G-KaPd'),
+(71, '838956_yuhuuuuuu.docx', '11.25', 'docx', '12.321849664052', 1, 'r4u7x!A%D*G-KaPd'),
+(72, '649165_akun-pegawai-eabsensi-dprd-sulsel.pdf', '390.81', 'pdf', '12.698018550873', 0, 'mZq4t7w!z%C*F-Ja'),
+(73, '649165_akun-pegawai-eabsensi-dprd-sulsel.pdf', '390.81', 'pdf', '13.087483247121', 1, 'mZq4t7w!z%C*F-Ja');
 
 -- --------------------------------------------------------
 
@@ -83,7 +93,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_files`
 --
 ALTER TABLE `tb_files`
-  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_user`

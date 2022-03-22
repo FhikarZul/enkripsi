@@ -20,7 +20,7 @@
 
 				$_SESSION['id_user'] = $user_id;
 				$_SESSION['status'] = "login";
-				header("location:super.php");
+				header("location:index.php");
 
 			}else if($level=='user'){
 				$_SESSION['id_user'] = $user_id;

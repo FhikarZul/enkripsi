@@ -39,8 +39,12 @@ $akhir = microtime(true);
 $lama = ($akhir - $awal)*1000/60;
 // ----------------------------------------
 
+$sql = "SELECT * FROM `tb_files` WHERE `kunci`='$kunci'";
+$query = mysqli_query($connect, $sql);       
+$cek = mysqli_num_rows($query);
 
-if(move_uploaded_file($file_tmp_name , $path)) {
+if($cek == 0){
+  if(move_uploaded_file($file_tmp_name , $path)) {
 
     // enkripsi
     $content_file = file_get_contents('files/'.$final_file_name);
@@ -51,16 +55,21 @@ if(move_uploaded_file($file_tmp_name , $path)) {
     fclose($file_open);
     // end enkripsi
 
-    $query="INSERT INTO `tb_files`(`file`, `size`, `tipe_file`, `waktu_enkripsi`,  `status`, `kunci`) VALUES ('$final_file_name', '$filesize', '$fileExtension', '$lama', '1','$kunci')"; 
+    $query="INSERT INTO `tb_files`(`file`, `size`, `tipe_file`, `waktu_enkripsi`,  `status`, `kunci`) VALUES ('$final_file_name', '$filesize', '$fileExtension', '$lama', '0','$kunci')"; 
 
     if (mysqli_query($connect, $query)){   
-        header("location:tambah-file.php?m=berhasil");
+        header("location:index.php?m=berhasil");
     }
 
-}else
-{
-   echo 'Gagal';
+  }else{
+    echo 'Gagal';
+  }
+}else{
+  header("location:enkripsi-file.php?m=gagal");
 }
+
+
+
 
 
 
