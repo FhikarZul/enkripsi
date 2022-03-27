@@ -99,6 +99,11 @@
 											echo "<b><p>Key sudah digunakan!</p></b>";
 										}
 									}
+
+									function generateKey(){
+										$rand128 = bin2hex(openssl_random_pseudo_bytes(16));
+										return $rand128;
+									}
 								?>
 
 								<div class="form-group add_bottom_30 add_top_20">
@@ -110,7 +115,7 @@
 
 	                            <div class="form-group add_top_30">
 	                                <label for="name">Kunci</label>
-	                                <input type="text" name="kunci" id="name" class="form-control required" required>
+	                                <input type="text" name="kunci" id="name" value="<?php echo generateKey(); ?>" class="form-control required" required>
 	                            </div>
 
 	                            

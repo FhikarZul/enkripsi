@@ -41,7 +41,7 @@ $lama = ($akhir - $awal)*1000/60;
 
 $db_kunci;
 
-$sql = "SELECT * FROM `tb_files` WHERE `kunci`='$kunci'";
+$sql = "SELECT * FROM `tb_files` WHERE `file`='$final_file_name'";
 $query = mysqli_query($connect, $sql);						
 							
 while ($row = mysqli_fetch_array($query)){

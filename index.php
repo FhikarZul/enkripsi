@@ -102,6 +102,7 @@
 				<table id="table_id" class="display"> 
 					<thead>
 						<tr>
+							<th>#</th>
 							<th>File PDF</th>
 							<th>Tipe File</th>
 							<th>Ukuran File</th>
@@ -117,12 +118,13 @@
 							include 'config/koneksi.php';
 						
 
-							$sql = "SELECT * FROM `tb_files`";
+							$sql = "SELECT * FROM `tb_files` ORDER BY id_file ASC";
 							$query = mysqli_query($connect, $sql);
 						
-							
+							$no = 1;
 							while ($row = mysqli_fetch_array($query)){
 								echo '<tr>
+										<td>'.$no.'</td>
 										<td>'.$row['file'].'</td>
 										<td>'.$row['tipe_file'].'</td>
 										<td>'.$row['size'].' kb</td>
@@ -142,6 +144,7 @@
 										
 												
                             	echo '</tr>';
+								$no++;
 							}
 
 						?>	

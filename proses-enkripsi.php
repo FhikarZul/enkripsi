@@ -23,7 +23,7 @@ $kunci = $_POST['kunci'];
 $file = $_FILES["file"]["name"];
 $file_tmp_name = $_FILES["file"]["tmp_name"];
 
-$final_file = $upload_dir.strtolower(rand(1000,1000000).'_'.$file);
+$final_file = $upload_dir.strtolower($file);
 $path = preg_replace('/\s+/', '-', $final_file);
 
 // file information
