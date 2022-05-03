@@ -48,11 +48,20 @@ if($cek == 0){
 
     // enkripsi
     $content_file = file_get_contents('files/'.$final_file_name);
-    $aes = new AES($kunci);
+    
+    //prosess
+    $cipher_algo = "AES-128-CTR"; //The cipher method, in our case, AES 
+    $iv_length = openssl_cipher_iv_length($cipher_algo); //The length of the initialization vector
+    $option = 0; //Bitwise disjunction of flags
+    $encrypt_iv = '8746376827619797'; //Initialization vector, non-null
+    $encrypt_key = $kunci; // The encryption key
+    // Use openssl_encrypt() encrypt the given string
+
     $file_open = fopen('files/'.$final_file_name, 'wb');
-    $cipher  = $aes->encrypt($content_file);
-    fwrite($file_open, $cipher);
+    $encrypted_string = openssl_encrypt($content_file, $cipher_algo, $encrypt_key, $option, $encrypt_iv);
+    fwrite($file_open, $encrypted_string);
     fclose($file_open);
+
     // end enkripsi
 
     $query="INSERT INTO `tb_files`(`file`, `size`, `tipe_file`, `waktu_enkripsi`,  `status`, `kunci`) VALUES ('$final_file_name', '$filesize', '$fileExtension', '$lama', '0','$kunci')"; 

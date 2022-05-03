@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Potenza - Job Application Form Wizard with Resume upload and Branch feature">
     <meta name="author" content="Ansonika">
-    <title>Tambah Dokumen | Pengamanan File</title>
+    <title>Enkripsi Dokumen | Pengamanan File</title>
 
 
     <!-- Favicons-->

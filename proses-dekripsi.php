@@ -54,9 +54,17 @@ if($db_kunci==$kunci){
 
         // dekripsi
         $content_file = file_get_contents('files/'.$file);
-        $aes = new AES($kunci);
+
+        //prosess
+        $cipher_algo = "AES-128-CTR"; //The cipher method, in our case, AES 
+        $iv_length = openssl_cipher_iv_length($cipher_algo); //The length of the initialization vector
+        $option = 0; //Bitwise disjunction of flags
+        $decrypt_iv = '8746376827619797'; //Initialization vector, non-null
+        $decrypt_key = $kunci; // The encryption key|
         $file_open = fopen('files/'.$file, 'wb');
-        $cipher  = $aes->decrypt($content_file);
+        $decrypted_string=openssl_decrypt ($content_file, $cipher_algo, $decrypt_key, $option, $decrypt_iv);
+
+        $cipher  = $decrypted_string;
         fwrite($file_open, $cipher);
         fclose($file_open);
         // end dekripsi

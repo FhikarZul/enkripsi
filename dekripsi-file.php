@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Potenza - Job Application Form Wizard with Resume upload and Branch feature">
     <meta name="author" content="Ansonika">
-    <title>Tambah Dokumen | Pengamanan File</title>
+    <title>Dekripsi Dokumen | Pengamanan File</title>
 
 
     <!-- Favicons-->
@@ -94,9 +94,9 @@
 								<?php 
 									if(isset($_GET['m'])){
 										if($_GET['m'] == "berhasil"){
-											echo '<b style="color:red;"><p>Enkripsi Berhasil!</p></b>';
+											echo '<b style="color:red;"><p>Dekripsi Berhasil!</p></b>';
 										}else if($_GET['m'] == "gagal"){
-											echo "<b><p>Enkripsi Gagal!</p></b>";
+											echo "<b><p>Dekripsi Gagal!</p></b>";
 										}
 									}
 								?>
@@ -116,7 +116,7 @@
 	                            
 								
 								<br>
-	                            <button type="submit" class="btn_1 rounded green">Enkripsi</button>
+	                            <button type="submit" class="btn_1 rounded green">Dekripsi</button>
 	                        </div>
 	                        <!-- /step-->
 							
