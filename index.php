@@ -142,7 +142,8 @@
 											';
 										}
 										
-												
+								echo '<td><a href="proses-hapus.php?id='.$row['id_file'].'" class="btn_1 rounded green" >Hapus</a></td>		
+								  ';				
                             	echo '</tr>';
 								$no++;
 							}
